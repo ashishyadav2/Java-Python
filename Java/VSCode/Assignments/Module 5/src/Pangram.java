@@ -1,5 +1,3 @@
-import javax.swing.plaf.TextUI;
-
 public class Pangram {
     public static void main(String[] args) {
         String sentence = "leetcode";
@@ -16,7 +14,9 @@ public class Pangram {
     static boolean masking(String sentence) {
         boolean[] mask = new boolean[sentence.length()];
         for(int i=0;i<sentence.length();i++) {
-            
+            for(int j = 0;j<str.length();j++) {
+                if(sentence.charAt(i)=)
+            }
         }
     }
 }
