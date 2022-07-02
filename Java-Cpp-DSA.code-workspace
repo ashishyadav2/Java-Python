@@ -4,5 +4,11 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.project.sourcePaths": [
+			"Java/VSCode/Cycle Sort/src",
+			"Java/VSCode/Assignments/Module 5/Medium/src",
+			"Java/VSCode/Assignments/Module 6/src"
+		]
+	}
 }

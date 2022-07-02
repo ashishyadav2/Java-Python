@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary</title>
+</head>
+<body>
+    <script>
+    var p = 1;
+    function ansd() {
+        while(p>0) {
+            var ans = 2*Math.pow(0.5,p) + (8/9)*Math.pow(3/4,p);
+            if(ans==1) {
+                return p;
+            }
+        p++;
+        }
+    }
+    console.log(ansd());
+    </script>
+</body>
+</html>
