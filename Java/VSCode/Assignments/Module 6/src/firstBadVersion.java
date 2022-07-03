@@ -1,4 +1,4 @@
-public firstBadVersion  {
+public class firstBadVersion  {
     public static void main(String[] args) {
         int n = 5;
     }

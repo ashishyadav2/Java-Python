@@ -3,8 +3,11 @@ import java.util.Arrays;
 public class MergeSort {
     public static void main(String[] args) {
         int[] arr = {5,4,3,2,1};
-        System.out.println(Arrays.toString(mergeSort(arr)));
+        // System.out.println(Arrays.toString(mergeSort(arr)));
+        mergeSortInplace(arr, 0, arr.length);  
+        System.out.println(Arrays.toString(arr));      
     }
+    //merge sort recursion
     static int[] mergeSort(int[] arr) {
         if(arr.length==1) {
             return arr;
@@ -39,5 +42,45 @@ public class MergeSort {
             k++;
         }
         return finalArr;
+    }
+    //Mergesort in place
+    static void mergeSortInplace(int[] arr,int start,int end) {
+        if(end-start == 1){
+            return;
+        }
+        int mid = start + (end-start)/2;
+        mergeSortInplace(arr, start, mid);
+        mergeSortInplace(arr, mid, end);
+        merger(arr,start,mid,end);
+    }
+    static void merger(int[] arr,int start,int mid,int end) {
+        int[] mix = new int[end - start];
+        int i = start;
+        int j = mid;
+        int k = 0;
+        while(i<mid && j<end) {
+            if(arr[i]>arr[j]) {
+                mix[k] = arr[j];
+                j++;
+            }
+            else {
+                mix[k] = arr[i];
+                i++;
+            }
+            k++;
+        }
+        while(i<mid) {
+            mix[k]=arr[i];
+            i++;
+            k++;
+        }
+        while(j<end) {
+            mix[k]=arr[j];
+            j++;
+            k++;
+        }
+        for (int m = 0; m < mix.length; m++) {
+            arr[start+m] = mix[m];
+        }
     }
 }
