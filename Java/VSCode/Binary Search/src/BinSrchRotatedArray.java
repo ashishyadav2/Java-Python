@@ -1,6 +1,6 @@
 public class BinSrchRotatedArray {
     public static void main(String[] args) {
-        int[] arr = {3,8,9,12,0,1,2};
+        int[] arr = {0,1,2,3,8,9};
         int target = 9;
         System.out.println(findPivot(arr));
         System.out.println(search(arr, target));
@@ -52,6 +52,6 @@ public class BinSrchRotatedArray {
                 start = mid + 1;
             }
         }
-        return - 1;
+        return arr.length-1;
     }
 }

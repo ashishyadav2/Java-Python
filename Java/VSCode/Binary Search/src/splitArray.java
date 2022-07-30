@@ -1,6 +1,6 @@
 public class splitArray {
     public static void main(String[] args) {
-        int[] nums = {7,2,5,10,8};
+        int[] nums = {2,3,1,2,4,3};
         int m = 2;
         System.out.println(splArr(nums, m));
     }
