@@ -1,0 +1,7 @@
+#basic react commands
+npx create-react-app .
+. = current folder
+
+npm start // to start develpment server
+
+npm run build //for production ready code

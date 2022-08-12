@@ -1,0 +1,120 @@
+#basic mongodb commands CRUD
+show dbs
+shows databases in the system
+
+use database_name/new_database_name
+
+show collections
+collections is tables in mongo (users is collection/table here)
+
+db.createCollection(name)
+to make table/collection
+
+db.dropDatabase()
+to delete db
+
+db
+gives current database
+
+db.users.insertOne({JSON object})
+to insert record.nesting is allowed of json objects
+
+db.users.insertMany([{Json array of objects}])
+to insert many records
+
+db.users.find()
+to show record/tables same as select all
+
+db.users.find().limit(2)
+shows only only records
+
+db.users.find().sort({name:1}).limit(2)
+1: ascending
+-1: descending 
+shows names sorted in ascending of limit 2
+
+db.users.find().skip(1).limit(2)
+skips entry 1 and shows entry 2 only
+
+db.users.find({name: "kyle"})
+same as select name where name ="name"
+
+db.users.find({name: "kyle"},{name:1,age:1,_id:0})
+we can put :0 which field we don't want to show
+same as select with custom attributes id :0 ignores id information
+
+#complex queries
+
+db.users.find({name: {$eq : "sally"})
+shows document of name sally $eq is equal
+
+db.users.find({name : {$ne : "sally "})
+shows every document except of sally $ne is not equal
+
+db.users.find({age: {$gt:13})
+$gt is greater than
+
+db.users.find({age: {$gte:13})
+$gt is greater than equal to
+
+db.users.find({age: {$lte:13})
+$gt is less than equal to
+
+db.users.find({name: {$in : ["kyle","sally"]}})
+returns list of documents where name is kyle, sally
+
+db.users.find({name: {$nin : ["kyle","sally"]}})
+returns list of documents where name is not kyle, sally
+
+db.users.find({age: {$exists : true}})
+returns documents who have age , if value set to null then it will return true it checks for key not for value
+
+db.users.find({age: {$gte: 20,$lte:40}}) // AND query
+shows age greater than 20 and less than 40
+
+db.users.find({$and [{age:26},{name:"kyle"}])
+implicit and query
+returns age and name of matching document
+
+db.users.find({$or [{age:26},{name:"kyle"}]) // OR query
+
+db.users.find({ age: {$not : {$lte : 20}}) // NOT query
+
+db.users.find({$expr: {$gt : {["$debt","$balance"]}})
+$expr is expression
+returns documents whose debt is greater than balance
+
+db.users.findOne({age: {$lte:40}})
+returns first document matching query
+
+db.users.countDocuments({age: {$lte:40}})
+returns count
+
+#updating
+//all find commands work here
+db.users.updateOne({age:26},{$set: {age:27}})
+
+db.users.updateOne({_id: ObjectId("746464646d466464ea64s64")},{$inc : {age:3}})
+increment age by 3
+
+db.users.updateOne({_id: ObjectId("746464646d466464ea64s64")},{$rename : {age:"aayu"}})
+
+//removing age column
+db.users.updateOne({_id: ObjectId("746464646d466464ea64s64")},{$unset : {age: ""}})
+
+db.users.updateOne({_id: ObjectId("746464646d466464ea64s64")},{$push : {hobbies: "Cricket"}})
+add new item in hobbies array
+
+db.users.updateOne({_id: ObjectId("746464646d466464ea64s64")},{$pull : {hobbies: "Cricket"}})
+removes item in hobbies array
+
+db.users.updateMany({address: {$exists: true}}, {$unset : {address : ""}})
+update many documents at once
+
+db.usersreplaceOne({age:30},{name : "John"}})
+finds document whose age is 30 and replaces entire document by john object
+
+#deleting
+db.users.deleteOne({ name: "john"})
+
+db.users.deleteMany({ age: {$exists: false}})
