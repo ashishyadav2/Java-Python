@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary</title>
+</head>
+<body>
+    <script>
+    /*var p = 1;
+    function ansd() {
+        while(p>0) {
+            var ans = 2*Math.pow(0.5,p) + (8/9)*Math.pow(3/4,p);
+            if(ans==1) {
+                return p;
+            }
+        p++;
+        }
+    }
+    console.log(ansd());*/
+	function remFinder() {
+	var num = 5;
+	for(let i=0;i<=9;i++) {
+		console.log(`${i} rem: ${i%num}`);
+		document.write(`${i} rem: ${i%num}<br>`);
+	}
+}
+	function baseToDecimal(num,base) {
+		var i=0;
+		var temp = num;
+		var rem,ans=0;
+		while(num>0) {
+			rem = num%base;
+			num = parseInt(num/10);
+			ans += rem*Math.pow(base,i);
+			i++;
+		}
+	console.log(`Dec: ${temp}, Ans: ${ans}`);		
+	}
+function decimalToBase(num,base) {
+	return num.toString(base);
+}
+for(let i=0;i<23;i++) {
+	console.log(i+" = "+decimalToBase(i,3));
+}
+
+
+    </script>
+<script>
+// A JavaScript program for generating code
+// word from given binary data and key.
+ 
+// Returns XOR of 'a' and 'b'
+// (both of same length)
+function xor1(a, b)
+{
+ 
+        // Initialize result
+        let result = "";
+ 
+        let n = b.length;
+ 
+        // Traverse all bits, if bits are
+        // same, then XOR is 0, else 1
+        for (let i = 1; i < n; i++) {
+                if (a[i] == b[i]) {
+                        result += "0";
+                }
+                else {
+                        result += "1";
+                }
+        }
+        return result;
+}
+ 
+// Performs Modulo-2 division
+function mod2div(divident, divisor) {
+ 
+        // Number of bits to be XORed at a time.
+        let pick = divisor.length;
+ 
+        // Slicing the divident to appropriate
+        // length for particular step
+        let tmp = divident.substr(0, pick);
+ 
+        let n = divident.length;
+ 
+        while (pick < n)
+        {
+                if (tmp[0] == '1')
+                {
+                 
+                        // Replace the divident by the result
+                        // of XOR and pull 1 bit down
+                        tmp = xor1(divisor, tmp) + divident[pick];
+                }
+                else
+                {
+                        // If leftmost bit is '0'.
+                        // If the leftmost bit of the dividend (or the
+                        // part used in each step) is 0, the step cannot
+                        // use the regular divisor; we need to use an
+                        // all-0s divisor.
+                        let str = "";
+                        for (let i = 0; i < pick; i++) {
+                                str = str.concat('0');
+                        }
+                        tmp = xor1(str, tmp) + divident[pick];
+                }
+                 
+                // Increment pick to move further
+                pick += 1;
+        }
+ 
+        // For the last n bits, we have to carry it out
+        // normally as increased value of pick will cause
+        // Index Out of Bounds.
+        if (tmp[0] == '1') {
+                tmp = xor1(divisor, tmp);
+        }
+        else {
+                tmp = xor1(String(pick, '0'), tmp);
+        }
+        return tmp;
+}
+ 
+// Function used at the sender side to encode
+// data by appending remainder of modular division
+// at the end of data.
+function encodeData(data, key) {
+        let l_key = key.length;
+ 
+        // Appends n-1 zeroes at end of data
+        let str = "";
+        for (let i = 0; i < l_key - 1; i++) {
+                str = str.concat('0');
+        }
+        console.log(str);
+        let appended_data = data.concat(str);
+ 
+        let remainder = mod2div(appended_data, key);
+ 
+        // Append remainder in the original data
+        let codeword = data + remainder;
+ 
+        // Adding the print statements
+        document.write("Remainder : ", remainder);
+        document.write("Encoded Data (Data + Remainder) :", codeword);
+}
+ 
+// Driver code
+{
+        let data = "1101011011";
+        let key = "10011";
+ 
+        encodeData(data, key);
+}
+ 
+// This code is contributed by Gautam goel (gautamgoel962)
+</script>
+</body>
+</html>

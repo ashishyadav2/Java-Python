@@ -1,8 +1,20 @@
-class MyClass:
-#     def __init__(self,name,age):
-#         self.name = name
-#         self.age = age
+class Person:
+    def __init__(self,fname,lname):
+        self.fname = fname
+        self.lname = lname
 
-# obj1 = MyClass("Ashish",29)
-# print(obj1.name)
-# print(obj1.age)
+    def print_name(self):
+        strr = "My name is {} {}"
+        print(strr.format(self.fname,self.lname))
+
+class Student(Person):
+    def __init__(self,fname,lname,gradYear):
+        super().__init__(self,fname,lname)
+        self.gradYear = gradYear
+    
+    def welcome(self):
+        strr = "My name is {} {} and grad year is {}"
+        print(strr.format(self.fname,self.lname,self.gradYear))
+
+obj4 = Student("Ashish","Yadav",2024)
+obj4.welcome()
