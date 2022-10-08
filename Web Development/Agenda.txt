@@ -1,0 +1,18 @@
+#Weekly projects using Mern
+Js SlideShow
+tic tac toe
+note taking application 
+
+#Skills I have
+HTML
+CSS 
+JS 
+Java
+
+#Skills I need/improvement
+Java OOPs
+Python Machine Learning
+Logic building/Problem solving
+MERN Stack
+Spring Boot
+SQL
