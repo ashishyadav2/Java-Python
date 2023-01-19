@@ -159,5 +159,35 @@ function encodeData(data, key) {
  
 // This code is contributed by Gautam goel (gautamgoel962)
 </script>
+<script>
+        let arr = [2,3,6,8,9,12,15,18,22];
+        let a1 = [[],[]];
+        let a2 = [];
+        let a3 = [];
+        let m1 = 8;
+        let m2 = 15;
+        let m3 = 22;
+        let meanArr = [8,15,20];
+        for(let i=0;i<arr.length;i++) {
+                a1[i] = parseFloat(Math.abs(arr[i] - m1)).toFixed(1);
+        }
+        for(let i=0;i<arr.length;i++) {
+                a2[i] = parseFloat(Math.abs(arr[i] - m2)).toFixed();
+        }
+        for(let i=0;i<arr.length;i++) {
+                a3[i] = parseFloat(Math.abs(arr[i] - m3)).toFixed();
+        }
+        console.log(arr);
+        console.log(a1);
+        console.log(a2);
+        console.log(a3);
+        function avg(array) {
+                let avg = 0;
+                for(i in array) {
+                        avg+=i;
+                }
+                return avg/array.length;
+        }
+</script>
 </body>
 </html>
