@@ -82,6 +82,7 @@ public class SinglyLIst {
     }
     public void display() {
         Node temp = head;
+        System.out.println();
         while(temp!=null) {
             System.out.print(temp.value+"->");
             temp = temp.next;
