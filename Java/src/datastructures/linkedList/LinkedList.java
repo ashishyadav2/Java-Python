@@ -9,6 +9,7 @@ public class LinkedList {
         list.deleteFirst();
         list.deleteLast();
         list.insertAt(125, 2);
+        list.sort(list.head);
         list.display();
     }
     private Node head;
@@ -18,21 +19,39 @@ public class LinkedList {
     LinkedList() {
         this.size = 0;
     }
+    void sort(Node head) {
+        Node current = head;
+        Node index = null;
+        int temp;
+        if(head==null) return;
+        while(current!=null) {
+            index = current.next;
+            while(index!=null) {
+                if(current.data > index.data) {
+                    temp = current.data;
+                    current.data = index.data;
+                    index.data = temp;
+                }
+                index = index.next;
+            }
+            current = current.next;
+        }
+    }
     void insertFirst(int data) {
         Node node = new Node(data);
-        node.next = head;
-        head = node;
-        if(tail==null) tail = head;
+        node.next = head; //linking
+        head = node; //shifting head;
+        if(tail==null) tail = head; // if only one node is present head and tail is same
         size++;
     }
     void insertLast(int data){
-        if(tail==null) {
+        if(tail==null) { //only one node is present
             insertFirst(data);
             return;
         }
         Node node = new Node(data);
-        tail.next = node;
-        tail = node;
+        tail.next = node; //linking
+        tail = node; // shifting tail
         size++;
     }
     void insertAt(int data,int index) {
@@ -63,8 +82,8 @@ public class LinkedList {
         }
         Node secondLast = get(size-2);
         int val = tail.data;
-        tail = secondLast;
-        tail.next = null;
+        tail = secondLast; // shifting tail
+        tail.next = null; // breaking link
         size--;
         return val;
     }
