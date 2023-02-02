@@ -3,7 +3,7 @@ public class LinkedList {
         LinkedList list = new LinkedList();
         list.insertFirst(52);
         list.insertLast(96);
-        list.insertFirst(79);
+        list.insertFirst(98);
         list.insertLast(48);
         list.display();
         list.deleteFirst();
