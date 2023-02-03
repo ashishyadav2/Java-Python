@@ -7,6 +7,7 @@ public class DoublyLL {
         list.insertFirst(32);
         list.display();
         list.delete(list.head);
+        list.insertAfter(list.head, 46);
         list.display();
     }
     private Node head;
@@ -46,6 +47,19 @@ public class DoublyLL {
         temp.next = node;
         node.prev = temp;
        
+    }
+    void insertAfter(Node prevNode,int data) {
+        if(prevNode==null) {
+            System.out.println("Node is null");
+            return;
+        }
+        Node node = new Node(data);
+        node.next = prevNode.next;
+        prevNode.next = node;
+        node.prev = prevNode;
+        if(node.next!=null) {
+            node.next.prev = node;
+        }
     }
     void delete(Node delNode) {
         if(head==null||delNode==null) return;
