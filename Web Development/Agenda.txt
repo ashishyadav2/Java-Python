@@ -8,6 +8,7 @@ HTML
 CSS 
 JS 
 Java
+MERN
 
 #Skills I need/improvement
 Java OOPs
