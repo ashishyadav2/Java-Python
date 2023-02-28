@@ -1,0 +1,7 @@
+max
+min
+sum 
+post order
+pre order
+
+in BST

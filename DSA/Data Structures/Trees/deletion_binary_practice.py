@@ -54,30 +54,31 @@ class BinarySearchTreeNode:
         return max_val
 
     def find_min(self):
-        if self.left is None:
+        if self.left is None: #go down until you reach a node whose left is None and return the self.data do this recursively
             return self.data
         return self.left.find_min()
 
     def delete(self, val):
-        if val < self.data:
+        if val<self.data:
             if self.left:
                 self.left = self.left.delete(val)
 
-        elif val > self.data:
+        elif val>self.data:
             if self.right:
                 self.right = self.right.delete(val)
-
-        else:
-            if self.left is None and self.right is None:
+        
+        else: #it will run if it val == self.data
+            if self.left is None and self.right is None: #case 1 if it is the leaf node return None
                 return None
-            if self.left is None:
+            if self.left is None: #case 2 if only right ir present return right
                 return self.right
-            if self.right is None:
+            if self.right is None: #case 2 if only left is present return left
                 return self.left
 
-            min_val = self.right.find_min()
-            self.data = min_val
-            self.right = self.right.delete(min_val)
+            else: # case 3 the node to be deleted has more than one child then find max in left sub tree replace it with the node data to be deleted and return new left sub tree
+                max_val = self.left.find_max()
+                self.data = max_val
+                self.left  = self.left.delete(max_val)
 
         return self
 
@@ -95,5 +96,5 @@ if __name__ == '__main__':
     numbers = [2, 9, 46, 7, 95, 0, 49, 64]
     numbers_tree = build_tree(numbers)
     print(numbers_tree.in_order_traversal())
-    numbers_tree.delete(64)
+    numbers_tree.delete(49)
     print(numbers_tree.in_order_traversal())
