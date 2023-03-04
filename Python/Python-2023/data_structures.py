@@ -46,3 +46,11 @@ print(new_list)
 
 sorted(new_list)
 print(new_list)
+
+#dictionary
+aa = {} #empty dictionary
+ab = {1: "hello", 2:"World"}
+
+#updation can be performed using key only
+ab[1] = "Car"
+print(ab)
