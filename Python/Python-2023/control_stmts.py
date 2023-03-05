@@ -89,3 +89,9 @@ def fib(num):
 
 print(fibo(10))
 print(fib(10))
+
+#enumerate
+#syntax enumerate(iteratable,start)
+lstt = [1,6,5,9,6]
+for i,num in enumerate(lstt,0): #i is index and num is element in lstt
+    print(i,num,sep=" : ")
