@@ -1,0 +1,18 @@
+Here's a random text that includes phone numbers:
+
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt justo ut elit posuere bibendum. Fusce lacinia nibh ut ullamcorper sagittis. Integer sed sagittis lacus. Nullam quis fermentum est. Quisque volutpat ipsum eu massa consectetur, eget malesuada sapien dignissim. Praesent ullamcorper sem eu ante volutpat, non scelerisque urna aliquam. Ut non nisi finibus, posuere sapien nec, dictum dolor. Vivamus nec tortor a purus hendrerit mollis. Sed auctor elit sit amet purus consequat, at condimentum ex rutrum. Integer finibus libero ac aliquet dictum. Aenean sodales sem in erat ultricies, vitae lobortis sem fermentum. Phasellus eget ligula nunc. Nulla facilisi. In hac habitasse platea dictumst. Nunc sit amet elit sed ante pellentesque ultricies. Sed mollis urna id pharetra fringilla.
+
+Phasellus luctus erat sed lobortis aliquam. Aliquam convallis fermentum quam. Cras sit amet interdum.
+1234567890
+email: xyz1_23_@gmail.com
+abdf.g123@one0.in
+Phone numbers included: 
+- 123-456-7890
+- (555)-123-4567
+- (987)-654-3210
+- 800-555-1234
+- 555-999-8888"
+order number 65fds465
+order num 646abefce6665
+order #49846465
+Please note that the phone numbers provided in this example are placeholders and do not correspond to real phone numbers.
