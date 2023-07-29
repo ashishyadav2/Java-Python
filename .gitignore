@@ -4,5 +4,5 @@ Python/Basics
 Python/**/Web Scraping/
 *.code-workspace
 *.html
-imdb.csv
-data.json
+*.csv
+*.json
