@@ -41,13 +41,15 @@ public class JavaList {
         System.out.println();
 
         List<Integer> list4 = new Vector<>();
-        list3.add(69);
-        list3.add(58);
-        list3.add(0);
+        list4.add(69);
+        list4.add(58);
+        list4.add(0);
 
         System.out.println(list3.equals(list4));
 
         List<Integer> list5 = new Stack<>();
+        System.out.println("====");
+        list.forEach((i)-> System.out.println(i));
     }
     public static void main(String[] args) {
         listDemo();
