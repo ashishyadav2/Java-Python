@@ -1,9 +1,22 @@
 package javacollections.jset;
 
 import java.util.*;
-class Tuple<T> {
-    public Tuple() {
-
+class Tuple<T,U> {
+    T first;
+    U second;
+    public Tuple(T first, U second) {
+        this.first = first;
+        this.second = second;
+    }
+    public T first(){
+        return this.first;
+    }
+    public U second(){
+        return this.second;
+    }
+    @Override
+    public String toString(){
+        return "("+first()+", "+second()+")";
     }
 }
 class comp implements Comparator<Object> {
@@ -102,13 +115,24 @@ public class JavaSet {
         }
         hmap2.forEach((k,v)-> System.out.printf("%s: %d%n",k,v));
 
+    }
+    public static void tuple(){
+        List<Tuple<String, Integer>> l1 = new LinkedList<>();
+        for(int i=0;i<26;i++) {
+            Tuple<String,Integer> t1 = new Tuple<>(Character.toString(i+97), i + 97);
+            l1.add(t1);
+        }
+        for(Tuple<String,Integer> t1: l1){
+            System.out.println(t1);
+        }
 
     }
     public static void main(String[] args) {
 //        normalSet();
 //        sortedSet();
 //        setOperations();
-        hashMap();
+//        hashMap();
+        tuple();
     }
 
 }
