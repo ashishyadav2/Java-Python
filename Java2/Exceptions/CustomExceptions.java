@@ -1,21 +1,19 @@
 package Exceptions;
 
 class MyException extends Exception {
-    public MyException(String message){
-        super(message);
+    public MyException(String msg){
+        super(msg);
     }
 }
 public class CustomExceptions {
     public static void main(String[] args) {
-        int a = 15;
-        try{
-            if( a>10) {
-                throw new MyException("something went wrong");
-            }
+        int a = 5;
+        try {
+            throw new MyException("cannot divide by zero");
         }
         catch (MyException e){
             e.printStackTrace();
-            System.out.println(e.getMessage());
+            System.out.println("Exception occurred");
         }
     }
 }
