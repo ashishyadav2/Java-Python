@@ -1,0 +1,19 @@
+2
+1
+Hotel Paradise
+2
+Deluxe Suite
+500
+3
+Standard Room
+200
+5
+2
+Hotel Sunshine
+2
+Suite
+700
+2
+Economy Room
+100
+8
